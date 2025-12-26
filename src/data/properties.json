@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      },
+      {
+        "id": 2,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      },
+      {
+        "id": 2,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      },
+      {
+        "id": 2,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      },
+      {
+        "id": 2,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      },
+      {
+        "id": 2,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      },
+      {
+        "id": 2,
+        "type": "house",
+        "price": 750000,
+        "bedrooms": 4,
+        "dateAdded": "2024-09-10",
+        "postcode": "NW1",
+        "location": "London NW1",
+        "shortDesc": "Spacious family house in a prime location.",
+        "longDesc": "This beautiful four-bedroom house offers modern living with a large garden, spacious rooms, and excellent transport links nearby.",
+        "images": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"],
+        "floorPlan": "floor1.png",
+        "map": "https://www.google.com/maps?q=NW1+London&output=embed"
+      }
+      
+      
+]
