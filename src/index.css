@@ -57,3 +57,72 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* NAVBAR */
+.navbar {
+  background: #1e3a8a;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  padding: 3rem;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #f59e0b;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* CONTACT */
+.contact-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+.footer {
+  background: #0f172a;
+  color: white;
+  padding: 2rem;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
