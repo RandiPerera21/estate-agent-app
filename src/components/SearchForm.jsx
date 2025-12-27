@@ -17,7 +17,7 @@ export default function SearchForm({ onSearch }) {
   
     return (
       <section className="search-section">
-        <form className="search-card" onSubmit={handleSubmit}>
+        <form className="search-card" onSubmit={submit}>
 
           <div className="form-group">
             <label>Property Type</label>
