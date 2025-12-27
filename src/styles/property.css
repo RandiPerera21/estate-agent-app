@@ -37,4 +37,85 @@
     padding: 1.5rem;
     border-radius: 14px;
   }
+
+  .property-page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    background: #6b4a8f;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
+  .property-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1.5rem;
+  }
+  
+  .main-img {
+    width: 100%;
+    border-radius: 14px;
+  }
+  
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .thumbs img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* DETAILS BOX */
+  .details-box div {
+    display: flex;
+    justify-content: space-between;
+    background: #efe9ff;
+    padding: 0.7rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* TABS */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .tabs button {
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: none;
+    background: #e6e0ff;
+  }
+  
+  .tabs .active {
+    background: #6b4a8f;
+    color: white;
+  }
+  
+  .floor-plan {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: block;
+  }
   
