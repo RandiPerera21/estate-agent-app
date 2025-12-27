@@ -1,35 +1,38 @@
-import { useState } from "react";
-import properties from "../data/properties.json";
-import { filterProperties } from "../utils/filterProperties";
+import "../styles/search.css";
 import SearchForm from "../components/SearchForm";
 import PropertyList from "../components/PropertyList";
 import Favourites from "../components/Favourites";
+import { useState } from "react";
+import properties from "../data/properties.json";
 
 export default function SearchPage() {
-  const [results, setResults] = useState(properties);
-
-  const handleSearch = criteria => {
-    setResults(filterProperties(properties, criteria));
-  };
+  const [filtered, setFiltered] = useState(properties);
 
   return (
-    <div className="page">
-      <header className="hero">
-        <h1>Find your perfect home</h1>
-        <p>Search properties across the UK</p>
-      </header>
+    <div className="search-page">
 
-      <SearchForm onSearch={handleSearch} />
+      {/* TITLE */}
+      <h1 className="search-title">Search Your Dream Home</h1>
 
-      <div className="layout">
-        <div className="results">
-          <PropertyList properties={results} />
+      {/* SEARCH FORM */}
+      <SearchForm onSearch={setFiltered} />
+
+      {/* MAIN CONTENT */}
+      <div className="search-layout">
+
+        {/* PROPERTIES */}
+        <div className="results-section">
+          <h2 className="section-heading">Search Results</h2>
+          <PropertyList properties={filtered} />
         </div>
 
-        <aside className="sidebar">
+        {/* FAVOURITES */}
+        <aside className="favourites-section">
           <Favourites />
         </aside>
+
       </div>
+
     </div>
   );
 }
