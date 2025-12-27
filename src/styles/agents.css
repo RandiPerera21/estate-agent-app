@@ -17,4 +17,60 @@
     object-fit: cover;
     border-radius: 12px;
   }
+
+  .agent-btn {
+    margin-top: 0.8rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+  }
+  
+  .agent-btn:hover {
+    background: #1e40af;
+  }
+  
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .agent-role {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .modal-actions button {
+    flex: 1;
+  }
+  
+  .modal-actions .cancel {
+    background: #e5e7eb;
+    color: black;
+  }
+  
   
