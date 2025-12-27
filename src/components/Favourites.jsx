@@ -6,25 +6,27 @@ export default function Favourites() {
     useContext(FavouritesContext);
 
   return (
-    <div className="favourites">
-      <h3>Saved Properties</h3>
+    <div className="favourites-box">
+      <h3>Favourites</h3>
+
+      <button className="clear-btn" onClick={clearFavourites}>
+        CLEAR FAVOURITES
+      </button>
 
       {favourites.length === 0 && <p>No favourites yet</p>}
 
-      <ul>
-        {favourites.map(p => (
-          <li key={p.id}>
-            £{p.price.toLocaleString()}
-            <button onClick={() => removeFavourite(p.id)}>✖</button>
-          </li>
-        ))}
-      </ul>
-
-      {favourites.length > 0 && (
-        <button className="clear" onClick={clearFavourites}>
-          Clear All
-        </button>
-      )}
+      {favourites.map(p => (
+        <div key={p.id} className="fav-card">
+          <img
+            src={`/images/properties/p${p.id}/1.jpg`}
+            alt=""
+          />
+          <div>
+            <p>Rs. {p.price} millions</p>
+            <button onClick={() => removeFavourite(p.id)}>🗑</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
