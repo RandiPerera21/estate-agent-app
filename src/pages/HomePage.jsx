@@ -9,7 +9,15 @@ export default function HomePage() {
         <div className="hero-content">
           <h1>Discover Your Next Home</h1>
           <p>Trusted estate agents helping you buy, sell and rent properties</p>
-          <Link to="/search" className="cta">Browse Properties</Link>
+
+          <div className="hero-buttons">
+            <Link to="/search" className="cta">
+                Browse Properties
+            </Link>
+            <Link to="/contact" className="cta secondary">
+                Contact Us
+            </Link>
+          </div>
         </div>
 
         {/*Image*/}
