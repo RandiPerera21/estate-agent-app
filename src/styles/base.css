@@ -1,0 +1,15 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
