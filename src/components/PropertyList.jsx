@@ -2,10 +2,12 @@ import PropertyCard from "./PropertyCard";
 
 export default function PropertyList({ properties }) {
   return (
-    <div className="grid">
-      {properties.map(p => (
-        <PropertyCard key={p.id} property={p} />
-      ))}
+    <div className="property-grid">
+      {properties.map((p, index) => (
+        <PropertyCard key={`${p.id}-${index}`} property={p} />
+       ))}
+
     </div>
+    
   );
 }
