@@ -1,18 +1,39 @@
 export default function ContactForm() {
-  const submitForm = e => {
-    e.preventDefault();
-    alert("Thank you! Your enquiry has been submitted.");
-  };
-
   return (
-    <form className="contact-form" onSubmit={submitForm}>
-      <h3>Send an Enquiry</h3>
+    <form className="contact-form">
+      <h2>Contact Us</h2>
+      <p className="form-subtitle">
+        Please fill in the form below and we will get back to you shortly.
+      </p>
 
-      <input required placeholder="Your Name" />
-      <input type="email" required placeholder="Your Email" />
-      <textarea required placeholder="Your Message"></textarea>
+      <div className="form-row">
+        <div className="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" required />
+        </div>
+
+        <div className="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter your email" required />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="Subject" required />
+      </div>
+
+      <div className="form-group">
+        <label>Message</label>
+        <textarea
+          rows="5"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+      </div>
 
       <button type="submit">Send Message</button>
     </form>
   );
+  
 }
