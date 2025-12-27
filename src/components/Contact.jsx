@@ -6,9 +6,7 @@ export default function Contact() {
     <div className="page">
 
       <h1>Contact Us</h1>
-      <p className="intro">
-        Get in touch with our team or directly contact one of our experienced agents.
-      </p>
+      
 
       {/* CONTACT DETAILS + FORM */}
       <section className="contact-main">
@@ -30,7 +28,8 @@ export default function Contact() {
       <section className="meet-agents">
         <h2>Meet Our Agents</h2>
         <p>
-          Our friendly and experienced agents are here to help you buy, sell, or rent your property.
+        Our experienced agents are here to help you with buying, selling,
+        and renting properties. 
         </p>
 
         <AgentList />
