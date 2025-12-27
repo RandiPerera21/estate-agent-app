@@ -1,19 +1,41 @@
+import AgentList from "./AgentList";
+import ContactForm from "./ContactForm";
+
 export default function Contact() {
-    return (
-      <div className="page">
-        <h1>Contact Us</h1>
-  
-        <p>
-          Have questions about a property or need assistance?
-          Get in touch with our team.
-        </p>
-  
-        <div className="contact-box">
-          <p><strong>Address:</strong> 25 Regent Street, London</p>
-          <p><strong>Phone:</strong> +44 20 7946 0958</p>
-          <p><strong>Email:</strong> info@homeharbor.co.uk</p>
+  return (
+    <div className="page">
+
+      <h1>Contact Us</h1>
+      <p className="intro">
+        Get in touch with our team or directly contact one of our experienced agents.
+      </p>
+
+      {/* CONTACT DETAILS + FORM */}
+      <section className="contact-main">
+        <ContactForm />
+
+        <div className="contact-info">
+          <h3>Our Office</h3>
+          <p>📍 25 Regent Street, London</p>
+          <p>📞 +44 20 7946 0958</p>
+          <p>✉ info@homeharbor.co.uk</p>
+
+          <h4>Office Hours</h4>
+          <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
+          <p>Sat: 10:00 AM – 4:00 PM</p>
         </div>
-      </div>
-    );
-  }
-  
+      </section>
+
+      {/* MEET OUR AGENTS */}
+      <section className="meet-agents">
+        <h2>Meet Our Agents</h2>
+        <p>
+          Our friendly and experienced agents are here to help you buy, sell, or rent your property.
+        </p>
+
+        <AgentList />
+      </section>
+
+    </div>
+  );
+}
