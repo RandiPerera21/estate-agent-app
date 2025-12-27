@@ -1,46 +1,72 @@
-import AgentCard from "./AgentCard";
+import { useState } from "react";
+import AgentContactForm from "./AgentContactForm";
 
 const agents = [
   {
     id: 1,
-    name: "Sarah Williams",
+    name: "Sarah Johnson",
     role: "Senior Sales Agent",
-    phone: "+44 20 7123 4561",
     email: "sarah@homeharbor.co.uk",
+    phone: "+44 20 1234 5671",
     image: "/images/agents/agent1.jpg"
   },
   {
     id: 2,
-    name: "Daniel Brown",
+    name: "Michael Brown",
     role: "Lettings Specialist",
-    phone: "+44 20 7123 4562",
-    email: "daniel@homeharbor.co.uk",
+    email: "michael@homeharbor.co.uk",
+    phone: "+44 20 1234 5672",
     image: "/images/agents/agent2.jpg"
   },
   {
     id: 3,
-    name: "Priya Patel",
+    name: "Emma Wilson",
     role: "Property Consultant",
-    phone: "+44 20 7123 4563",
-    email: "priya@homeharbor.co.uk",
+    email: "emma@homeharbor.co.uk",
+    phone: "+44 20 1234 5673",
     image: "/images/agents/agent3.jpg"
   },
   {
     id: 4,
-    name: "Michael Chen",
+    name: "David Lee",
     role: "Investment Advisor",
-    phone: "+44 20 7123 4564",
-    email: "michael@homeharbor.co.uk",
+    email: "david@homeharbor.co.uk",
+    phone: "+44 20 1234 5674",
     image: "/images/agents/agent4.jpg"
   }
 ];
 
 export default function AgentList() {
+  const [selectedAgent, setSelectedAgent] = useState(null);
+
   return (
-    <div className="agent-grid">
-      {agents.map(agent => (
-        <AgentCard key={agent.id} agent={agent} />
-      ))}
-    </div>
+    <>
+      <div className="agent-grid">
+        {agents.map(agent => (
+          <div className="agent-card" key={agent.id}>
+            <img src={agent.image} alt={agent.name} />
+            <h3>{agent.name}</h3>
+            <p className="role">{agent.role}</p>
+            <p>📧 {agent.email}</p>
+            <p>📞 {agent.phone}</p>
+
+            <button
+              className="agent-btn"
+              onClick={() => setSelectedAgent(agent)}
+            >
+              Contact Agent
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* AGENT CONTACT FORM MODAL */}
+      {selectedAgent && (
+        <AgentContactForm
+          agent={selectedAgent}
+          onClose={() => setSelectedAgent(null)}
+        />
+      )}
+    </>
   );
 }
