@@ -7,6 +7,7 @@ export default function Navbar() {
 
       <div className="nav-links">
         <Link to="/">Home</Link>
+        <Link to="/search">Search</Link>
         <Link to="/search">Properties</Link>
         <Link to="/contact">Contact</Link>
       </div>
