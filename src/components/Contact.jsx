@@ -14,9 +14,9 @@ export default function Contact() {
 
         <div className="contact-info">
           <h3>Our Office</h3>
-          <p>📍 25 Regent Street, London</p>
-          <p>📞 +44 20 7946 0958</p>
-          <p>✉ info@homeharbor.co.uk</p>
+          <p>📍 25 St.Peters Road, Colombo 03</p>
+          <p>📞 +94 111 946 946</p>
+          <p>✉ info@bluebrink.co.lk</p>
 
           <h4>Office Hours</h4>
           <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
