@@ -3,7 +3,16 @@ import { useContext } from "react";
 import { FavouritesContext } from "../context/FavouritesContext";
 
 export default function PropertyCard({ property }) {
-  const { addFavourite } = useContext(FavouritesContext);
+  const { addFavourite, removeFavourite, isFavourite } =
+    useContext(FavouritesContext);
+
+  const favourite = isFavourite(property.id);
+
+  const toggleFavourite = () => {
+    favourite
+      ? removeFavourite(property.id)
+      : addFavourite(property);
+  };
 
   return (
     <div className="property-card">
@@ -13,13 +22,8 @@ export default function PropertyCard({ property }) {
       />
 
       <div className="property-body">
-        <p className="price">Rs. {property.price} millions</p>
-
-        {/* SAFE DESCRIPTION */}
-        <p className="short-desc">
-          {property.shortDesc}  
-        </p>
-        
+        <p className="price">Rs. {property.price} million</p>
+        <p className="short-desc">{property.shortDesc}</p>
 
         <div className="property-actions">
           <Link to={`/property/${property.id}`} className="details-btn">
@@ -27,14 +31,13 @@ export default function PropertyCard({ property }) {
           </Link>
 
           <button
-            className="fav-btn"
-            onClick={() => addFavourite(property)}
+            className={`fav-btn ${favourite ? "active" : ""}`}
+            onClick={toggleFavourite}
           >
-            ♡
+            {favourite ? "♥" : "♡"}
           </button>
         </div>
       </div>
     </div>
-    
   );
 }
