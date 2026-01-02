@@ -7,7 +7,7 @@
 .search-title {
   text-align: center;
   font-size: 2.2rem;
-  color: #6b4a8f;
+  color: #1354bd;
   margin-bottom: 2rem;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .search-form button {
-  background: #6b4a8f;
+  background: #1354bd;
   color: white;
   font-weight: 600;
   border: none;
@@ -84,7 +84,7 @@
 }
 
 .details-btn {
-  border: 1px solid #6b4a8f;
+  border: 1px solid #1354bd;
   background: transparent;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -132,7 +132,7 @@
 /* PROPERTY CARD */
 .short-desc {
   font-size: 0.9rem;
-  color: #555;
+  color: #373737;
   margin: 0.4rem 0;
 }
 
@@ -143,11 +143,11 @@
 }
 
 .details-btn {
-  border: 1px solid #6b4a8f;
+  border: 1px solid #1354bd;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   text-decoration: none;
-  color: #6b4a8f;
+  color: #1354bd;
   font-weight: 600;
 }
 
@@ -156,7 +156,7 @@
   background: transparent;
   font-size: 1.4rem;
   cursor: pointer;
-  color: #6b4a8f;
+  color: #1354bd;
 }
 
 /* PROPERTY PAGE */
@@ -169,7 +169,7 @@
 .back-btn {
   display: inline-block;
   margin-bottom: 1rem;
-  background: #6b4a8f;
+  background: #1354bd;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -230,6 +230,6 @@
 }
 
 .tabs .active {
-  background: #6b4a8f;
+  background: #1354bd;
   color: white;
 }
