@@ -1,74 +1,67 @@
 import { useState } from "react";
+import Select from "react-select";
+import DatePicker from "react-datepicker";
+import Slider from "rc-slider";
+import "react-datepicker/dist/react-datepicker.css";
+import "rc-slider/assets/index.css";
 
 export default function SearchForm({ onSearch, properties }) {
   const [criteria, setCriteria] = useState({
-    type: "",
-    minPrice: "",
-    maxPrice: "",
-    minBedrooms: "",
-    maxBedrooms: "",
-    month: "",
-    year: "",
-    postcode: ""
+    type: null,
+    priceRange: [0, 100],
+    bedroomRange: [1, 10],
+    dateAdded: null,
+    postcode: null
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCriteria(prev => ({ ...prev, [name]: value }));
-  };
+  // Options for React-Select
+  const typeOptions = [
+    { value: "any", label: "Any Type" },
+    { value: "house", label: "House" },
+    { value: "flat", label: "Flat" }
+  ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Filter properties based on all criteria
+  const postcodeOptions = [
+    { value: "colombo", label: "Colombo" },
+    { value: "kandy", label: "Kandy" },
+    { value: "gampaha", label: "Gampaha" },
+    { value: "negombo", label: "Negombo" },
+    { value: "nuwara eliya", label: "Nuwara Eliya" },
+    { value: "batticaloa", label: "Batticaloa" },
+    { value: "matara", label: "Matara" }
+  ];
+
+  const handleSubmit = () => {
     const filtered = properties.filter(property => {
-      // Type filter (house/flat/any)
-      if (criteria.type && criteria.type !== "any") {
-        if (property.type.toLowerCase() !== criteria.type.toLowerCase()) {
+      // Type filter
+      if (criteria.type && criteria.type.value !== "any") {
+        if (property.type.toLowerCase() !== criteria.type.value.toLowerCase()) {
           return false;
         }
       }
 
-      // Min Price filter
-      if (criteria.minPrice && property.price < Number(criteria.minPrice)) {
+      // Price range filter
+      if (property.price < criteria.priceRange[0] || property.price > criteria.priceRange[1]) {
         return false;
       }
 
-      // Max Price filter
-      if (criteria.maxPrice && property.price > Number(criteria.maxPrice)) {
+      // Bedroom range filter
+      if (property.bedrooms < criteria.bedroomRange[0] || property.bedrooms > criteria.bedroomRange[1]) {
         return false;
       }
 
-      // Min Bedrooms filter
-      if (criteria.minBedrooms && property.bedrooms < Number(criteria.minBedrooms)) {
-        return false;
-      }
-
-      // Max Bedrooms filter
-      if (criteria.maxBedrooms && property.bedrooms > Number(criteria.maxBedrooms)) {
-        return false;
-      }
-
-      // Date Added filter (month and year)
-      if (criteria.month || criteria.year) {
+      // Date filter
+      if (criteria.dateAdded) {
         const propertyDate = new Date(property.dateAdded);
-        const propertyMonth = propertyDate.toLocaleString('default', { month: 'long' });
-        const propertyYear = propertyDate.getFullYear();
-
-        if (criteria.month && propertyMonth.toLowerCase() !== criteria.month.toLowerCase()) {
-          return false;
-        }
-
-        if (criteria.year && propertyYear !== Number(criteria.year)) {
+        if (propertyDate < criteria.dateAdded) {
           return false;
         }
       }
 
-      // Postcode filter (first part matches)
+      // Postcode filter
       if (criteria.postcode) {
-        const searchPostcode = criteria.postcode.toLowerCase().trim();
-        const propertyPostcode = property.postcode.toLowerCase().trim();
-        
+        const searchPostcode = criteria.postcode.value.toLowerCase();
+        const propertyPostcode = property.postcode.toLowerCase();
         if (!propertyPostcode.includes(searchPostcode)) {
           return false;
         }
@@ -82,88 +75,87 @@ export default function SearchForm({ onSearch, properties }) {
 
   const handleReset = () => {
     setCriteria({
-      type: "",
-      minPrice: "",
-      maxPrice: "",
-      minBedrooms: "",
-      maxBedrooms: "",
-      month: "",
-      year: "",
-      postcode: ""
+      type: null,
+      priceRange: [0, 100],
+      bedroomRange: [1, 10],
+      dateAdded: null,
+      postcode: null
     });
-    onSearch(properties); // Show all properties
+    onSearch(properties);
   };
 
   return (
-    <div className="search-form">
-      <select 
-        name="type" 
-        value={criteria.type} 
-        onChange={handleChange}
-      >
-        <option value="">Any Type</option>
-        <option value="house">House</option>
-        <option value="flat">Flat</option>
-      </select>
+    <div className="search-form-enhanced">
+      {/* Property Type - React Select */}
+      <div className="form-group">
+        <label>Property Type</label>
+        <Select
+          options={typeOptions}
+          value={criteria.type}
+          onChange={(selected) => setCriteria(prev => ({ ...prev, type: selected }))}
+          placeholder="Select property type..."
+          isClearable
+        />
+      </div>
 
-      <input 
-        type="number" 
-        name="minPrice"
-        value={criteria.minPrice}
-        onChange={handleChange}
-        placeholder="Min Price (Rs. Millions)" 
-      />
-      
-      <input 
-        type="number" 
-        name="maxPrice"
-        value={criteria.maxPrice}
-        onChange={handleChange}
-        placeholder="Max Price (Rs. Millions)" 
-      />
+      {/* Price Range - RC Slider */}
+      <div className="form-group">
+        <label>Price Range: Rs. {criteria.priceRange[0]}M - Rs. {criteria.priceRange[1]}M</label>
+        <Slider
+          range
+          min={0}
+          max={100}
+          value={criteria.priceRange}
+          onChange={(value) => setCriteria(prev => ({ ...prev, priceRange: value }))}
+          marks={{ 0: '0M', 25: '25M', 50: '50M', 75: '75M', 100: '100M' }}
+        />
+      </div>
 
-      <input 
-        type="number" 
-        name="minBedrooms"
-        value={criteria.minBedrooms}
-        onChange={handleChange}
-        placeholder="Min Bedrooms" 
-      />
-      
-      <input 
-        type="number" 
-        name="maxBedrooms"
-        value={criteria.maxBedrooms}
-        onChange={handleChange}
-        placeholder="Max Bedrooms" 
-      />
+      {/* Bedroom Range - RC Slider */}
+      <div className="form-group">
+        <label>Bedrooms: {criteria.bedroomRange[0]} - {criteria.bedroomRange[1]}</label>
+        <Slider
+          range
+          min={1}
+          max={10}
+          value={criteria.bedroomRange}
+          onChange={(value) => setCriteria(prev => ({ ...prev, bedroomRange: value }))}
+          marks={{ 1: '1', 3: '3', 5: '5', 7: '7', 10: '10' }}
+        />
+      </div>
 
-      <input 
-        type="text" 
-        name="month"
-        value={criteria.month}
-        onChange={handleChange}
-        placeholder="Added Month (Ex: February)" 
-      />
-      
-      <input 
-        type="number" 
-        name="year"
-        value={criteria.year}
-        onChange={handleChange}
-        placeholder="Added Year (Ex: 2025)" 
-      />
+      {/* Date Added - React DatePicker */}
+      <div className="form-group">
+        <label>Date Added After</label>
+        <DatePicker
+          selected={criteria.dateAdded}
+          onChange={(date) => setCriteria(prev => ({ ...prev, dateAdded: date }))}
+          placeholderText="Select date..."
+          dateFormat="dd/MM/yyyy"
+          isClearable
+        />
+      </div>
 
-      <input 
-        type="text" 
-        name="postcode"
-        value={criteria.postcode}
-        onChange={handleChange}
-        placeholder="Postcode (Ex: Colombo, Kandy)" 
-      />
+      {/* Postcode - React Select */}
+      <div className="form-group">
+        <label>Postcode Area</label>
+        <Select
+          options={postcodeOptions}
+          value={criteria.postcode}
+          onChange={(selected) => setCriteria(prev => ({ ...prev, postcode: selected }))}
+          placeholder="Select postcode area..."
+          isClearable
+        />
+      </div>
 
-      <button type="button" onClick={handleSubmit}>SEARCH</button>
-      <button type="button" onClick={handleReset}>RESET</button>
+      <div className="button-group">
+        <button type="button" onClick={handleSubmit} className="btn-search">
+          SEARCH
+        </button>
+        <button type="button" onClick={handleReset} className="btn-reset">
+          RESET
+        </button>
+      </div>
     </div>
   );
 }
