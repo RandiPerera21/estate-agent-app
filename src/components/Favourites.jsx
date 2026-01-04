@@ -90,6 +90,7 @@ export default function Favourites() {
             >
               🗑️
             </button>
+
           </div>
         </div>
       ))}
