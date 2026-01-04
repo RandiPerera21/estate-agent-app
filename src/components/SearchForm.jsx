@@ -22,15 +22,14 @@ export default function SearchForm({ onSearch, properties }) {
   ];
 
   const postcodeOptions = [
-    { value: "colombo", label: "Colombo" },
-    { value: "kandy", label: "Kandy" },
-    { value: "gampaha", label: "Gampaha" },
-    { value: "negombo", label: "Negombo" },
-    { value: "nuwara eliya", label: "Nuwara Eliya" },
-    { value: "batticaloa", label: "Batticaloa" },
-    { value: "matara", label: "Matara" }
+    { value: "co5", label: "CO5 - Colombo" },
+    { value: "ky1", label: "KY1 - Kandy" },
+    { value: "gp1", label: "GP1 - Gampaha" },
+    { value: "ng1", label: "NG1 - Negombo" },
+    { value: "ne1", label: "NE1 - Nuwara Eliya" },
+    { value: "bt1", label: "BT1 - Batticaloa" },
+    { value: "mt1", label: "MT1 - Matara" }
   ];
-
   const handleSubmit = () => {
     const filtered = properties.filter(property => {
       // Type filter
