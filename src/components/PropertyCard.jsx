@@ -14,8 +14,19 @@ export default function PropertyCard({ property }) {
       : addFavourite(property);
   };
 
+  // Drag and Drop handlers
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("property", JSON.stringify(property));
+    e.dataTransfer.effectAllowed = "copy";
+  };
+
   return (
-    <div className="property-card">
+    <div 
+      className="property-card"
+      draggable="true"
+      onDragStart={handleDragStart}
+      style={{ cursor: 'grab' }}
+    >
       <img
         src={`/images/properties/p${property.id}/1.jpg`}
         alt={property.location}
@@ -24,6 +35,7 @@ export default function PropertyCard({ property }) {
       <div className="property-body">
         <p className="price">Rs. {property.price} million</p>
         <p className="short-desc">{property.shortDesc}</p>
+        <p className="postcode">Postcode: {property.postcode}</p>
 
         <div className="property-actions">
           <Link to={`/property/${property.id}`} className="details-btn">
@@ -33,6 +45,7 @@ export default function PropertyCard({ property }) {
           <button
             className={`fav-btn ${favourite ? "active" : ""}`}
             onClick={toggleFavourite}
+            title={favourite ? "Remove from favourites" : "Add to favourites"}
           >
             {favourite ? "♥" : "♡"}
           </button>
