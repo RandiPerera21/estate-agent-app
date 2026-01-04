@@ -41,7 +41,6 @@ export default function PropertyCard({ property }) {
       <div className="property-body">
         <p className="price">Rs. {property.price} million</p>
         <p className="short-desc">{property.shortDesc}</p>
-        <p className="postcode">Postcode: {property.postcode}</p>
 
         <div className="property-actions">
           <Link to={`/property/${property.id}`} className="details-btn">
