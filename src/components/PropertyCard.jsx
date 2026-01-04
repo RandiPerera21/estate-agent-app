@@ -18,6 +18,11 @@ export default function PropertyCard({ property }) {
   const handleDragStart = (e) => {
     e.dataTransfer.setData("property", JSON.stringify(property));
     e.dataTransfer.effectAllowed = "copy";
+    e.currentTarget.style.opacity = "0.5";
+  };
+
+  const handleDragEnd = (e) => {
+    e.currentTarget.style.opacity = "1";
   };
 
   return (
@@ -25,6 +30,7 @@ export default function PropertyCard({ property }) {
       className="property-card"
       draggable="true"
       onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
       style={{ cursor: 'grab' }}
     >
       <img
