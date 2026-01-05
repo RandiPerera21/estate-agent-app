@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <div className="page">
 
-      {/* HERO */}
+      {/* Hero */}
       <section className="home-hero">
         <div className="hero-content">
           <h1>
@@ -27,11 +27,14 @@ export default function HomePage() {
         </div>
 
         <div className="hero-image">
-          <img src="/images/home-hero.jpg" alt="Modern home" />
+          <img 
+          src={`${import.meta.env.BASE_URL}images/home-hero.jpg`}  
+          alt="Modern home"
+          />
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* Services */}
       <section className="services-section">
         <div className="service-container">
 
