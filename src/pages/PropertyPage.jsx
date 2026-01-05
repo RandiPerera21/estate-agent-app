@@ -35,7 +35,7 @@ export default function PropertyPage() {
           {[2, 3, 4, 5, 6, 7].map(i => (
             <img
               key={i}
-              src={`/images/properties/p${property.id}/${i}.jpg`}
+              src={`${import.meta.env.BASE_URL}images/properties/p${property.id}/${i}.jpg`}
               alt=""
             />
           ))}
