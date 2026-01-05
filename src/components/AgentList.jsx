@@ -8,7 +8,7 @@ const agents = [
     role: "Senior Sales Agent",
     email: "sarah@bluebrink.co.lk",
     phone: "+94 11 1234 567",
-    image: "${import.meta.env.BASE_URL}images/agents/agent1.webp"
+    image: "agent1.webp"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const agents = [
     role: "Lettings Specialist",
     email: "michael@bluebrink.co.lk",
     phone: "+94 11 1234 567",
-    image: "${import.meta.env.BASE_URL}images/agents/agent2.webp"
+    image: "agent2.webp"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const agents = [
     role: "Property Consultant",
     email: "emma@bluebrink.co.lk",
     phone: "+94 11 1234 567",
-    image: "${import.meta.env.BASE_URL}images/agents/agent3.png"
+    image: "agent3.png"
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const agents = [
     role: "Investment Advisor",
     email: "david@bluebrink.co.lk",
     phone: "+94 11 1234 567",
-    image: "${import.meta.env.BASE_URL}images/agents/agent4.png"
+    image: "agent4.png"
   }
 ];
 
@@ -44,7 +44,10 @@ export default function AgentList() {
       <div className="agent-grid">
         {agents.map(agent => (
           <div className="agent-card" key={agent.id}>
-            <img src={agent.image} alt={agent.name} />
+            <img 
+              src={`${import.meta.env.BASE_URL}images/agents/${agent.image}`}
+              alt={agent.name} 
+            />
             <h3>{agent.name}</h3>
             <p className="role">{agent.role}</p>
             <p>📧 {agent.email}</p>
