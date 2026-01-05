@@ -34,9 +34,10 @@ export default function PropertyCard({ property }) {
       style={{ cursor: 'grab' }}
     >
       <img
-        src={`/images/properties/p${property.id}/1.jpg`}
+        src={`${import.meta.env.BASE_URL}images/properties/p${property.id}/1.jpg`}
         alt={property.location}
       />
+
 
       <div className="property-body">
         <p className="price">Rs. {property.price} million</p>
