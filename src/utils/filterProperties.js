@@ -1,15 +1,12 @@
-export function filterProperties(properties, criteria) {
-    return properties.filter(p => {
-      return (
-        (!criteria.type || criteria.type === "any" || p.type === criteria.type) &&
-        (!criteria.minPrice || p.price >= criteria.minPrice) &&
-        (!criteria.maxPrice || p.price <= criteria.maxPrice) &&
-        (!criteria.minBeds || p.bedrooms >= criteria.minBeds) &&
-        (!criteria.maxBeds || p.bedrooms <= criteria.maxBeds) &&
-        (!criteria.postcode || p.postcode.startsWith(criteria.postcode)) &&
-        (!criteria.startDate || new Date(p.dateAdded) >= new Date(criteria.startDate)) &&
-        (!criteria.endDate || new Date(p.dateAdded) <= new Date(criteria.endDate))
-      );
-    });
-  }
-  
+export function filterProperties(properties, searchTerm) {
+  if (!searchTerm.trim()) return properties;
+
+  const term = searchTerm.toLowerCase();
+
+  return properties.filter((property) =>
+    property.location?.toLowerCase().includes(term) ||
+    property.area?.toLowerCase().includes(term) ||
+    property.postcode?.toLowerCase().includes(term) ||
+    property.type?.toLowerCase().includes(term)
+  );
+}
