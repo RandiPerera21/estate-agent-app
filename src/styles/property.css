@@ -65,7 +65,7 @@
     color:#09245b;
   }
   
-  /* GALLERY */
+  /* gallery */
   .gallery {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -88,7 +88,7 @@
     border-radius: 10px;
   }
   
-  /* DETAILS BOX */
+  /* details box */
   .details-box div {
     display: flex;
     justify-content: space-between;
@@ -100,7 +100,7 @@
     color:#113ea1;
   }
   
-  /* TABS */
+  /* tabs */
   .tabs {
     display: flex;
     justify-content: center;
@@ -150,7 +150,7 @@
     border: none;
     cursor: pointer;
     font-size: 1.4rem;
-    color: #ab0000; /* red icon */
+    color: #ef5d5d; /* red icon */
     
   }
   
