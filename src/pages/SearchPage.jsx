@@ -47,7 +47,7 @@ export default function SearchPage() {
       onDrop={handlePageDragEnd}
     >
 
-      {/* REMOVE ZONE (shown when dragging from favourites) */}
+      {/* Remove*/}
       {showRemoveZone && (
         <div 
           className="remove-zone"
@@ -59,16 +59,16 @@ export default function SearchPage() {
         </div>
       )}
 
-      {/* TITLE */}
+      {/* Title */}
       <h1 className="search-title">Search Your Dream Home</h1>
 
-      {/* SEARCH FORM */}
+      {/* Search form */}
       <SearchForm onSearch={setFiltered} properties={properties} />
 
-      {/* MAIN CONTENT */}
+      {/* Main content */}
       <div className="search-layout">
 
-        {/* PROPERTIES */}
+        {/* Properties */}
         <div className="results-section">
           <h2 className="section-heading">
             Search Results ({filtered.length} {filtered.length === 1 ? 'property' : 'properties'} found)
@@ -83,7 +83,7 @@ export default function SearchPage() {
           )}
         </div>
 
-        {/* FAVOURITES */}
+        {/* Favourites */}
         <aside className="favourites-section">
           <Favourites />
         </aside>
